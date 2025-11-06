@@ -2,24 +2,25 @@
 这是一个用于自动登录 Netlib 网站以保持账户活跃的 Node.js 脚本，配合 GitHub Actions 实现定时执行。
 
 ### 功能特点
-🔐 自动登录 Netlib 账户(单账户或多账户)
-👥 支持多账户批量处理
-⏰ 每60天自动执行一次
-📱 执行结果通过 Telegram 通知
-🇭🇰 使用香港时区显示时间
+- 🔐 自动登录 Netlib 账户(单账户或多账户)
+- 👥 支持多账户批量处理
+- ⏰ 每60天自动执行一次
+- 📱 执行结果可通过 Telegram 通知
 
 ### 环境变量配置
-1. 在 GitHub 仓库的 Settings → Secrets and variables → Actions 中添加以下环境变量
+1. fork 此项目
+2. 在actions菜单允许工作流运行
+
+3. 在 GitHub 仓库的 Settings → Secrets and variables → Actions 中添加以下环境变量
 ```
 ACCOUNTS	Netlib账户信息(必填)，格式：user1:pass1,user2:pass2
 
+不需要telegram通知可不配置
 BOT_TOKEN	Telegram机器人Token	  123456:ABC-DEF1234ghIkl-zyx57W2v1u1212Dtr
 CHAT_ID	   Telegram 聊天ID	      123456789
-不需要telegram通知可不配置
 ```
 
-2. GitHub Actions 自动运行
-脚本会自动每60天执行一次,可手动执行
+3. GitHub Actions 初始手动执行检查是否有配置错误，脚本会自动每60天执行一次,可手动执行
 
 ### 注意事项
 1. 确保 Netlib 账户密码正确
